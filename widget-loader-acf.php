@@ -54,5 +54,6 @@ $widget_config = array (
     ),
   ),
 );
-$widget_config["content-types"] = array('category', 'page'); // section, article
+
+$widget_config["content-types"] = get_option("options_" . $key . "_available_post_types");
 $widget_config["content-sizes"] = array('main'); // main, main-full-bleed, sidebar
