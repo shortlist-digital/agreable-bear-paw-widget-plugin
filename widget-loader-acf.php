@@ -2,6 +2,8 @@
 
 $key = 'widget_bear_paw';
 $widgetplacement = self::$config['tab_placement'];
+$post_types = get_post_types( array( 'public' => true ) );
+unset( $post_types["attachment"] );
 
 $widget_config = array (
   'key' => $key,
@@ -32,15 +34,7 @@ $widget_config = array (
       'label' => 'Manually insert content (Posts or Tiles)',
       'name' => 'posts',
       'type' => 'post_object',
-      'post_type' => array (
-        0 => 'post',
-        1 => 'longform',
-        2 => 'category',
-        3 => 'sponsored_post',
-        4 => 'sponsored_longform',
-        5 => 'page',
-        6 => 'sponsored_hub',
-      ),
+      'post_type' => $post_types,
       'allow_null' => 1,
       'multiple' => 1,
       'return_format' => 'object',
