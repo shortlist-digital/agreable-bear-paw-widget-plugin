@@ -2,8 +2,7 @@
 
 $key = 'widget_bear_paw';
 $widgetplacement = self::$config['tab_placement'];
-$post_types = get_post_types( array( 'public' => true ) );
-unset( $post_types["attachment"] );
+$post_types = self::$config['post_types'];
 
 $widget_config = array (
   'key' => $key,
@@ -27,7 +26,7 @@ $widget_config = array (
       ),
       'multiple' => 1,
       'return_format' => 'object',
-      'ui' => 1,
+      'ui' => 1
     ),
     array (
       'key' => $key . '_posts_manual',
